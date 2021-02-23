@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Weather App</title>
+  <link rel="stylesheet" type= "text/css" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+</head>
+<body>
+  <div class="form">
+    <div class="header">
+      <h1>Weather Forecast</h1>
+    </div>
+  
+  <div class="input">
+      <img class="search-icon" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDU2Ljk2NiA1Ni45NjYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDU2Ljk2NiA1Ni45NjY7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4Ij4KPHBhdGggZD0iTTU1LjE0Niw1MS44ODdMNDEuNTg4LDM3Ljc4NmMzLjQ4Ni00LjE0NCw1LjM5Ni05LjM1OCw1LjM5Ni0xNC43ODZjMC0xMi42ODItMTAuMzE4LTIzLTIzLTIzcy0yMywxMC4zMTgtMjMsMjMgIHMxMC4zMTgsMjMsMjMsMjNjNC43NjEsMCw5LjI5OC0xLjQzNiwxMy4xNzctNC4xNjJsMTMuNjYxLDE0LjIwOGMwLjU3MSwwLjU5MywxLjMzOSwwLjkyLDIuMTYyLDAuOTIgIGMwLjc3OSwwLDEuNTE4LTAuMjk3LDIuMDc5LTAuODM3QzU2LjI1NSw1NC45ODIsNTYuMjkzLDUzLjA4LDU1LjE0Niw1MS44ODd6IE0yMy45ODQsNmM5LjM3NCwwLDE3LDcuNjI2LDE3LDE3cy03LjYyNiwxNy0xNywxNyAgcy0xNy03LjYyNi0xNy0xN1MxNC42MSw2LDIzLjk4NCw2eiIgZmlsbD0iIzAwMDAwMCIvPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" />
+      <input type="text" placeholder="Please enter city name" class="input_text">
+      <img class="clear-icon" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxLjk3NiA1MS45NzYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxLjk3NiA1MS45NzY7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4Ij4KPGc+Cgk8cGF0aCBkPSJNNDQuMzczLDcuNjAzYy0xMC4xMzctMTAuMTM3LTI2LjYzMi0xMC4xMzgtMzYuNzcsMGMtMTAuMTM4LDEwLjEzOC0xMC4xMzcsMjYuNjMyLDAsMzYuNzdzMjYuNjMyLDEwLjEzOCwzNi43NywwICAgQzU0LjUxLDM0LjIzNSw1NC41MSwxNy43NCw0NC4zNzMsNy42MDN6IE0zNi4yNDEsMzYuMjQxYy0wLjc4MSwwLjc4MS0yLjA0NywwLjc4MS0yLjgyOCwwbC03LjQyNS03LjQyNWwtNy43NzgsNy43NzggICBjLTAuNzgxLDAuNzgxLTIuMDQ3LDAuNzgxLTIuODI4LDBjLTAuNzgxLTAuNzgxLTAuNzgxLTIuMDQ3LDAtMi44MjhsNy43NzgtNy43NzhsLTcuNDI1LTcuNDI1Yy0wLjc4MS0wLjc4MS0wLjc4MS0yLjA0OCwwLTIuODI4ICAgYzAuNzgxLTAuNzgxLDIuMDQ3LTAuNzgxLDIuODI4LDBsNy40MjUsNy40MjVsNy4wNzEtNy4wNzFjMC43ODEtMC43ODEsMi4wNDctMC43ODEsMi44MjgsMGMwLjc4MSwwLjc4MSwwLjc4MSwyLjA0NywwLDIuODI4ICAgbC03LjA3MSw3LjA3MWw3LjQyNSw3LjQyNUMzNy4wMjIsMzQuMTk0LDM3LjAyMiwzNS40NiwzNi4yNDEsMzYuMjQxeiIgZmlsbD0iIzAwMDAwMCIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" />
+      <input type="submit" value="Enter" class="submit">
+  </div>
+
+  <div class="container">
+    <div class="output">
+      <h1 class="name" id="name"></h1>
+      <p class="image" id="main"></p>
+      <p class="description" id="description"></p>
+      <p class="temp"></p>
+      <p class="temp_max"></p>
+      <p class="temp_min"></p>
+    </div>
+  </div>
+<footer><a href="https://icons8.com/icon">Icons by Icons8</a></footer>
+<script>
+var input = document.querySelector('.input_text');
+var main = document.querySelector('#name');
+var image = document.querySelector('#main');
+var temp = document.querySelector('.temp');
+var temp_min = document.querySelector('.temp_min');
+var temp_max = document.querySelector('.temp_max');
+var description = document.querySelector('#description');
+var button= document.querySelector('.submit');
+
+
+button.addEventListener('click', function(getWeather) {
+fetch('https://api.openweathermap.org/data/2.5/weather?q='+input.value+'&appid=9ad95af9d31d1993d854a5018ce1bfd9')
+    .then(response => response.json())
+    .then(data => {
+        
+        var nameValue = data['name'];
+        var imageValue = data['weather']['0']['main'];
+        var tempValue = data['main']['temp'];
+        var temp_minValue = data['main']['temp_min'];
+        var temp_maxValue = data['main']['temp_max'];
+        var descriptionValue = data['weather']['0']['description'];
+
+        tempValue = tempValue *(9/5)-459.67;
+        temp_maxValue = temp_maxValue *(9/5)-459.67;
+        temp_minValue = temp_minValue *(9/5)-459.67;
+
+      
+        switch (imageValue) {
+            case 'Clouds':
+              imageValue= `<img src="https://img.icons8.com/windows/96/000000/partly-cloudy-day.png"/>`;
+              break;
+            case 'Clear':
+              imageValue = `<img src="https://img.icons8.com/windows/96/000000/sun.png"/>`;
+              break;
+            case 'Rain':
+              imageValue = `<img src="https://img.icons8.com/windows/96/000000/wet.png"/>`;
+              break;
+            case 'Haze':
+              imageValue= `<img src="https://img.icons8.com/windows/96/000000/fog-day.png"/>`;
+              break;
+            default:
+              imageValue = imageValue;
+          } 
+        main.innerHTML = nameValue;
+        image.innerHTML = imageValue;
+        description.innerHTML = descriptionValue;
+        temp.innerHTML = "temperature - "+Math.round(tempValue)+" F";
+        temp_max.innerHTML = "high - "+Math.round(temp_maxValue)+" F";
+        temp_min.innerHTML = "low - "+Math.round(temp_minValue)+" F";
+
+
+
+  input.value ="";
+
+})
+
+.catch(error => alert("Please enter valid city name."));
+})
+
+const clearIcon = document.querySelector(".clear-icon");
+
+clearIcon.addEventListener("click", () => {
+  input.value = "";
+})
+</script>
+</body>
+</html>
