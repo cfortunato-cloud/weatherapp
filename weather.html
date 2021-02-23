@@ -42,7 +42,7 @@ var button= document.querySelector('.submit');
 
 
 button.addEventListener('click', function(getWeather) {
-fetch('https://api.openweathermap.org/data/2.5/weather?q='+input.value+'&appid=9ad95af9d31d1993d854a5018ce1bfd9')
+fetch('https://api.openweathermap.org/data/2.5/weather?q='+input.value+'&appid=')
     .then(response => response.json())
     .then(data => {
         
